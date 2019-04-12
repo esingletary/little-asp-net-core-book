@@ -36,7 +36,7 @@ namespace AspNetCoreTodo
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddSingleton<ITodoItemService, FakeTodoItemService>();
+            services.AddScoped<ITodoItemService, TodoItemService>();
 
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
